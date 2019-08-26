@@ -7,7 +7,7 @@ from subprocess import Popen, PIPE
 def get_current_song():
 	get_song_applescript = """
 	if application "Spotify" is running and application "iTunes" is not running then
-		return spotify_status()
+		return "Spotify: " & spotify_status()
 	else if application "Spotify" is running and application "iTunes" is running then
 		--Get current states of iTunes and Spotify
 		tell application "iTunes" to set itunesState to (player state as text)
@@ -24,7 +24,7 @@ def get_current_song():
 			return "Madman you be playin' 2 songs!!!"
 		end if
 	else if application "iTunes" is running and application "Spotify" is not running then
-		return itunes_status()
+		return "iTunes: " & itunes_status()
 	else
 		return "No music apps running"
 	end if
