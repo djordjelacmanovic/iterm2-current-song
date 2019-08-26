@@ -19,7 +19,7 @@ def get_current_song():
 		else if (itunesState is "playing" or itunesState is "paused") and spotifyState is not "playing" then
 			return "iTunes: " & itunes_status()
 		else if itunesState is "stopped" and spotifyState is "stopped" then
-			return "No Track Playing"
+			return "No Track Playing 😢"
 		else
 			return "Madman you be playin' 2 songs!!!"
 		end if
@@ -32,7 +32,7 @@ def get_current_song():
 	on spotify_status()
 		tell application "Spotify"
 			if player state is stopped then
-				return "No Track Playing"
+				return "No Track Playing 😢"
 			else
 				set track_artist to artist of current track
 				set track_name to name of current track
@@ -51,7 +51,7 @@ def get_current_song():
 	on itunes_status()
 		tell application "iTunes"
 			if player state is stopped then
-				return "No Track Playing"
+				return "No Track Playing 😢"
 			else
 				set track_artist to artist of current track
 				set track_name to name of current track
