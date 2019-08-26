@@ -85,7 +85,6 @@ async def main(connection):
 	@iterm2.StatusBarRPC
 	async def current_song_coroutine(knobs):
 		current_song = get_current_song()
-		print("current_song: " + current_song)
 		return current_song
 
 	await component.async_register(connection, current_song_coroutine)
